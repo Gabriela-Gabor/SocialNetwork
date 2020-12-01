@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="/sample/style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="controller.Controller">
+    <children>
+        <SplitPane dividerPositions="0.4" layoutY="180.0" prefHeight="798.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="400.0">
+                    <children>
+                        <Label layoutX="0.0" layoutY="20" text="Cauta dupa nume " />
+                        <TextField fx:id="textFieldNume" layoutX="100.0" layoutY="20" />
+                        <TableView fx:id="tableViewUtilizatori" prefHeight="668.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="194.0" AnchorPane.topAnchor="50.0">
+                            <columns>
+                                <TableColumn fx:id="tableColumnId" prefWidth="50.0" text="Id" />
+                                <TableColumn fx:id="tableColumnNume" prefWidth="100.0" text="Nume" />
+                                <TableColumn fx:id="tableColumnPrenume" prefWidth="100.0" text="Prenume" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane>
+                    <children>
+                        <GridPane hgap="5.0" prefHeight="137.0" prefWidth="382.0" vgap="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="79.0" AnchorPane.topAnchor="70.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="174.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="10.0" prefWidth="160.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                        </GridPane>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <SplitPane layoutY="180.0" prefHeight="798.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="350.0">
+                <Button layoutX="20.0" layoutY="10" mnemonicParsing="false" onAction="#handleFriends" text="Show friends" />
+                <Button layoutX="20.0" layoutY="40" mnemonicParsing="false" onAction="#handleUtilizatori" text="Show users" />
+                <Button layoutX="20.0" layoutY="100" mnemonicParsing="false" onAction="#handleDeleteFriend" text="Delete Friend" />
+                <Button layoutX="20.0" layoutY="130" mnemonicParsing="false" onAction="#handleAddFriend" text="Add Friend" />
+                <Button layoutX="20.0" layoutY="190" mnemonicParsing="false" onAction="#handleInvitatii" text="Friend Request" />
+            </AnchorPane>
+        </SplitPane>
+        <SplitPane dividerPositions="0.7" layoutY="180.0" prefHeight="798.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="500.0">
+                    <children>
+                        <Label layoutX="0.0" layoutY="20" text="Cauta dupa nume " />
+                        <TextField fx:id="textFieldNume2" layoutX="100.0" layoutY="20" />
+                        <TableView fx:id="tableViewPrieteni" prefHeight="500.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                            <columns>
+                                <TableColumn fx:id="tableColumnIdP" prefWidth="50.0" text="Id" />
+                                <TableColumn fx:id="tableColumnNumeP" prefWidth="100.0" text="Nume" />
+                                <TableColumn fx:id="tableColumnPrenumeP" prefWidth="100.0" text="Prenume" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+                <GridPane hgap="5.0" prefHeight="137.0" prefWidth="382.0" vgap="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="79.0" AnchorPane.topAnchor="70.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="174.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="10.0" prefWidth="160.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                </GridPane>
+                <!---<AnchorPane style="-fx-background-color: #8fbc8f"/>-->
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>
