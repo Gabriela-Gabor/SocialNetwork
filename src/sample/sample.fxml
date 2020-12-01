@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="/sample/style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="controller.Controller">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="/sample/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
     <children>
         <SplitPane dividerPositions="0.4" layoutY="180.0" prefHeight="798.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="0.0">
             <items>
@@ -11,7 +11,7 @@
                     <children>
                         <Label layoutX="0.0" layoutY="20" text="Cauta dupa nume " />
                         <TextField fx:id="textFieldNume" layoutX="100.0" layoutY="20" />
-                        <TableView fx:id="tableViewUtilizatori" prefHeight="668.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="194.0" AnchorPane.topAnchor="50.0">
+                        <TableView fx:id="tableViewUtilizatori" prefHeight="668.0" prefWidth="426.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="50.0">
                             <columns>
                                 <TableColumn fx:id="tableColumnId" prefWidth="50.0" text="Id" />
                                 <TableColumn fx:id="tableColumnNume" prefWidth="100.0" text="Nume" />
@@ -38,7 +38,7 @@
             </items>
         </SplitPane>
         <SplitPane layoutY="180.0" prefHeight="798.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="0.0">
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="350.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="488.0">
                 <Button layoutX="20.0" layoutY="10" mnemonicParsing="false" onAction="#handleFriends" text="Show friends" />
                 <Button layoutX="20.0" layoutY="40" mnemonicParsing="false" onAction="#handleUtilizatori" text="Show users" />
                 <Button layoutX="20.0" layoutY="100" mnemonicParsing="false" onAction="#handleDeleteFriend" text="Delete Friend" />

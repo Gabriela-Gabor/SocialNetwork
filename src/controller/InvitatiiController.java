@@ -11,6 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import service.UtilizatorService;
 
+import java.awt.event.ActionEvent;
 import java.time.LocalDateTime;
 
 public class InvitatiiController {
@@ -54,8 +55,17 @@ public class InvitatiiController {
         this.service=service;
         this.dialogStage=stage;
         this.utilizator=u;
-        invitatii.setAll(service.getInvitatiiPrimite(u.getId()));
+        invitatii.setAll(service.getInvitatiiTrimise(u.getId()));
     }
 
 
+    public void retragere(javafx.event.ActionEvent actionEvent) {
+        Invitatie selected = invitatieTableView.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            service.deleteInvitatie(selected.getId());
+            invitatii.setAll(service.getInvitatiiTrimise(this.utilizator.getId()));
+        } else {
+            MessageAlert.showErrorMessage(null, "Nu ai selectat nicio invitatie");
+        }
+    }
 }
