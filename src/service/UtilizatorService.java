@@ -231,6 +231,11 @@ public class UtilizatorService<RepositoryTuple>  {
         return repoInvitatie.save(invitatie);
     }
 
+    public Invitatie deleteInvitatie(long id){
+        Invitatie stearsa=repoInvitatie.delete(id);
+        return stearsa;
+    }
+
     public void raspundeInvitatie(long id, String raspuns) {
         Status s;
         if (raspuns.equals("Respinge"))
@@ -249,19 +254,21 @@ public class UtilizatorService<RepositoryTuple>  {
             long id2 = repoInvitatie.findOne(id).getU2().getId();
             p.setId(new Tuple<Long, Long>(id1, id2));
             repoFriends.save(p);
+
         }
+        repoInvitatie.delete(id);
 
 
     }
 
-    public List<Invitatie> getInvitatiiPrimite(long id) {
-        List<Invitatie> invitatiiPrimite = new ArrayList<>();
+    public List<Invitatie> getInvitatiiTrimise(long id) {
+        List<Invitatie> invitatiiTrimise = new ArrayList<>();
         for (Invitatie i : repoInvitatie.findAll()) {
-            if (i.getU2().getId() == id)
-                invitatiiPrimite.add(i);
+            if (i.getU1().getId() == id)
+                invitatiiTrimise.add(i);
 
         }
-        return invitatiiPrimite;
+        return invitatiiTrimise;
 
     }
 

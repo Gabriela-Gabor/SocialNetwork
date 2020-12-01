@@ -16,9 +16,9 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
     </GridPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="273.0">
+    <AnchorPane layoutY="14.0" minHeight="0.0" minWidth="0.0" prefHeight="307.0" prefWidth="346.0">
         <children>
-            <TableView fx:id="invitatieTableView" prefHeight="250.0" prefWidth="180.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="94.0" AnchorPane.topAnchor="50.0">
+            <TableView fx:id="invitatieTableView" layoutX="14.0" layoutY="17.0" prefHeight="248.0" prefWidth="220.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="17.0">
                 <columns>
                     <TableColumn fx:id="tableColumnId" prefWidth="50.0" text="Id" />
                     <!---<TableColumn fx:id="tableColumnFromId" prefWidth="100.0" text="Utilizator Id"/>
@@ -29,7 +29,7 @@
 
                  </columns>
              </TableView>
-            <Button layoutX="222.0" layoutY="150.0" mnemonicParsing="false" text="Button" />
+            <Button layoutX="242.0" layoutY="141.0" mnemonicParsing="false" onAction="#retragere" text="Retragere cerere" />
          </children>
      </AnchorPane>
          </children>
