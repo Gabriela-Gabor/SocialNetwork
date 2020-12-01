@@ -140,7 +140,7 @@ public class Controller {
         Utilizator u = tableViewPrieteni.getSelectionModel().getSelectedItem();
         if (selected != null & u != null) {
             try {
-                service.addInvitatie(u.getId(), selected.getId());
+                service.addInvitatie(selected.getId(), u.getId());
                 MessageAlert.showMessage(null, "Invitatia a fost trimisa!");
             } catch (ValidationException e) {
                 MessageAlert.showWarningMessage(null, e.getMessage());
