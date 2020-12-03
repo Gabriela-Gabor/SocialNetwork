@@ -10,7 +10,7 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="400.0">
                     <children>
                         <Label layoutX="0.0" layoutY="20" text="Cauta dupa nume " />
-                        <TextField fx:id="textFieldNume" layoutX="100.0" layoutY="20" />
+                        <TextField fx:id="textFieldNume" layoutX="100.0" layoutY="20" prefHeight="26.0" prefWidth="136.0" />
                         <TableView fx:id="tableViewUtilizatori" prefHeight="668.0" prefWidth="426.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="50.0">
                             <columns>
                                 <TableColumn fx:id="tableColumnId" prefWidth="50.0" text="Id" />
@@ -39,20 +39,23 @@
         </SplitPane>
         <SplitPane layoutY="180.0" prefHeight="798.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="0.0">
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="488.0">
-                <Button layoutX="20.0" layoutY="10" mnemonicParsing="false" onAction="#handleFriends" text="Show friends" />
-                <Button layoutX="20.0" layoutY="40" mnemonicParsing="false" onAction="#handleUtilizatori" text="Show users" />
-                <Button layoutX="20.0" layoutY="100" mnemonicParsing="false" onAction="#handleDeleteFriend" text="Delete Friend" />
-                <Button layoutX="20.0" layoutY="130" mnemonicParsing="false" onAction="#handleAddFriend" text="Add Friend" />
-                <Button layoutX="20.0" layoutY="190" mnemonicParsing="false" onAction="#handleInvitatii" text="Friend Request" />
+                <Button layoutX="20.0" layoutY="10" mnemonicParsing="false" onAction="#handleFriends" prefHeight="26.0" prefWidth="106.0" text="Show friends" />
+                <Button layoutX="20.0" layoutY="40" mnemonicParsing="false" onAction="#handleUtilizatori" prefHeight="26.0" prefWidth="106.0" text="Show users" />
+                <Button layoutX="18.0" layoutY="88.0" mnemonicParsing="false" onAction="#handleDeleteFriend" prefHeight="26.0" prefWidth="106.0" text="Delete Friend" />
+                <Button layoutX="18.0" layoutY="122.0" mnemonicParsing="false" onAction="#handleAddFriend" prefHeight="26.0" prefWidth="106.0" text="Add Friend" />
+                <Button layoutX="18.0" layoutY="173.0" mnemonicParsing="false" onAction="#handleInvitatii" prefHeight="26.0" prefWidth="106.0" text="Friend Request" />
+                <TextField fx:id="textFieldMessage" layoutX="20.0" layoutY="292.0" prefHeight="26.0" prefWidth="106.0" />
+                <Button layoutX="18.0" layoutY="326.0" mnemonicParsing="false" onAction="#sendmessage" prefHeight="26.0" prefWidth="106.0" text="Send Message" />
+            <Button layoutX="18.0" layoutY="243.0" mnemonicParsing="false" onAction="#showmessages" prefHeight="26.0" prefWidth="106.0" text="Show messages" />
             </AnchorPane>
         </SplitPane>
-        <SplitPane dividerPositions="0.7" layoutY="180.0" prefHeight="798.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <SplitPane dividerPositions="0.8" layoutY="180.0" prefHeight="798.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="500.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="588.0">
                     <children>
                         <Label layoutX="0.0" layoutY="20" text="Cauta dupa nume " />
                         <TextField fx:id="textFieldNume2" layoutX="100.0" layoutY="20" />
-                        <TableView fx:id="tableViewPrieteni" prefHeight="500.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                        <TableView fx:id="tableViewPrieteni" layoutX="25.0" prefHeight="668.0" prefWidth="587.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
                             <columns>
                                 <TableColumn fx:id="tableColumnIdP" prefWidth="50.0" text="Id" />
                                 <TableColumn fx:id="tableColumnNumeP" prefWidth="100.0" text="Nume" />

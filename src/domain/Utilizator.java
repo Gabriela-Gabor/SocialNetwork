@@ -52,11 +52,13 @@ public class Utilizator extends Entity<Long> {
             for (Utilizator u : getFriends())
                 friendsString += u.getFirstName() + " " + u.getLastName() + ",";
         }
-        return "Utilizator{" +
+        /*return "Utilizator{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", friends=" + friendsString +
-                '}';
+                '}';*/
+
+        return firstName+" "+ lastName;
     }
 
     @Override

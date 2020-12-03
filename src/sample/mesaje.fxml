@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="/sample/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MesajeController">
+   <children>
+      <TableView fx:id="mesajeTableView" layoutX="21.0" layoutY="29.0" prefHeight="362.0" prefWidth="439.0">
+        <columns>
+          <TableColumn fx:id="tableColumnFrom" prefWidth="140.79999351501465" text="FROM" />
+          <TableColumn fx:id="tableColumnMesaj" prefWidth="201.79998779296875" text="MESSAGE" />
+            <TableColumn fx:id="tableColumnDate" minWidth="0.0" prefWidth="95.19999999999999" text="DATE" />
+        </columns>
+      </TableView>
+      <Button layoutX="471.0" layoutY="223.0" mnemonicParsing="false" onAction="#replyMessage" prefHeight="26.0" prefWidth="113.0" text="Send reply" />
+      <TextField fx:id="textFieldMesaj" layoutX="471.0" layoutY="187.0" prefHeight="26.0" prefWidth="114.0" />
+   </children>
+</AnchorPane>

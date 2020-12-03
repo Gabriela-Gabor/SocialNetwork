@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import service.UtilizatorService;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -53,6 +54,8 @@ public class Controller {
     TextField textFieldNume;
     @FXML
     TextField textFieldNume2;
+    @FXML
+    TextField textFieldMessage;
 
 
     @FXML
@@ -185,7 +188,39 @@ public class Controller {
     }
 
 
+    public void sendmessage(ActionEvent actionEvent) {
+        Utilizator u1 = tableViewUtilizatori.getSelectionModel().getSelectedItem();
+        Utilizator u2 = tableViewPrieteni.getSelectionModel().getSelectedItem();
+        if (u1 != null && u2 != null) {
+            String mesaj = textFieldMessage.getText();
+            String utilizatori = u2.getId().toString();
+            service.addMessage(u1.getId(), utilizatori, mesaj, LocalDateTime.now());
+            textFieldMessage.clear();
+        }
+    }
 
+    public void showmessages(ActionEvent actionEvent) {
+        Utilizator selected = tableViewUtilizatori.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            try {
+                FXMLLoader loaderM = new FXMLLoader();
+                loaderM.setLocation(getClass().getResource("/sample/mesaje.fxml"));
+                AnchorPane rootM = loaderM.load();
+                Stage dialogStageM = new Stage();
+                dialogStageM.setTitle("Messages");
+                Scene sceneM = new Scene(rootM, 700, 400);
+                dialogStageM.setScene(sceneM);
+                MesajeController mesajeController = loaderM.getController();
+                mesajeController.setMesajeService(service, dialogStageM, selected);
+                dialogStageM.show();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        } else {
+            MessageAlert.showErrorMessage(null, "Nu ai selectat un utilizator");
+        }
+
+    }
 }
 
 

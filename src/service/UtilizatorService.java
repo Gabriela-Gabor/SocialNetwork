@@ -218,6 +218,17 @@ public class UtilizatorService<RepositoryTuple>  {
 
     }
 
+    public List<Message> mesajePrimite(long id){
+        List<Message> mesaje = new ArrayList<>();
+        Utilizator u = repoUtilizator.findOne(id);
+        for (Message m : repoMessage.findAll()) {
+            if (m.getTo().contains(u)) {
+                mesaje.add(m);
+            }
+        }
+        return mesaje;
+    }
+
     public Invitatie addInvitatie(long id1, long id2) {
         Utilizator u1 = repoUtilizator.findOne(id1);
         Utilizator u2 = repoUtilizator.findOne(id2);
