@@ -5,9 +5,11 @@ import domain.Message;
 import domain.Utilizator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import service.UtilizatorService;
@@ -21,19 +23,13 @@ public class MesajeController {
     @FXML
     TableView<Message> mesajeTableView;
     @FXML
-    TableColumn<Message, Long> tableColumnId;
-    @FXML
-    TableColumn<Message, Long> tableColumnFromId;
-    @FXML
-    TableColumn<Message, String> tableColumnFromFirstName;
-    @FXML
-    TableColumn<Message, Long> tableColumnToId;
-    @FXML
-    TableColumn<Message, String> tableColumnToFirstName;
+    TableColumn<Message, Utilizator> tableColumnFrom;
     @FXML
     TableColumn<Message,String> tableColumnMesaj;
     @FXML
     TableColumn<Message, LocalDateTime> tableColumnDate;
+    @FXML
+    TextField textFieldMesaj;
 
 
     private UtilizatorService service;
@@ -42,7 +38,9 @@ public class MesajeController {
 
     @FXML
     private void initialize(){
-        tableColumnId.setCellValueFactory(new PropertyValueFactory<Message, Long>("Id"));
+        tableColumnFrom.setCellValueFactory(new PropertyValueFactory<Message, Utilizator>("from"));
+        tableColumnMesaj.setCellValueFactory(new PropertyValueFactory<Message, String>("message"));
+        tableColumnDate.setCellValueFactory(new PropertyValueFactory<Message, LocalDateTime>("data"));
 
         mesajeTableView.setItems(mesaje);
 
@@ -55,4 +53,12 @@ public class MesajeController {
         mesaje.setAll(service.mesajePrimite(u.getId()));
     }
 
+    public void replyMessage(ActionEvent actionEvent) {
+       Message m = mesajeTableView.getSelectionModel().getSelectedItem();
+        if (m != null ) {
+            String mesaj = textFieldMesaj.getText();
+            service.addReplyMessage(m.getId(), utilizator.getId(), mesaj,LocalDateTime.now());
+            textFieldMesaj.clear();
+        }
+    }
 }

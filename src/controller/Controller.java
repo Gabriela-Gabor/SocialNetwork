@@ -201,14 +201,14 @@ public class Controller {
 
     public void showmessages(ActionEvent actionEvent) {
         Utilizator selected = tableViewUtilizatori.getSelectionModel().getSelectedItem();
-       /* if (selected != null) {
+        if (selected != null) {
             try {
                 FXMLLoader loaderM = new FXMLLoader();
                 loaderM.setLocation(getClass().getResource("/sample/mesaje.fxml"));
                 AnchorPane rootM = loaderM.load();
                 Stage dialogStageM = new Stage();
                 dialogStageM.setTitle("Messages");
-                Scene sceneM = new Scene(rootM, 400, 250);
+                Scene sceneM = new Scene(rootM, 700, 400);
                 dialogStageM.setScene(sceneM);
                 MesajeController mesajeController = loaderM.getController();
                 mesajeController.setMesajeService(service, dialogStageM, selected);
@@ -219,7 +219,7 @@ public class Controller {
         } else {
             MessageAlert.showErrorMessage(null, "Nu ai selectat un utilizator");
         }
-    }*/
+
     }
 }
 
