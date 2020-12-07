@@ -194,8 +194,13 @@ public class Controller {
         if (u1 != null && u2 != null) {
             String mesaj = textFieldMessage.getText();
             String utilizatori = u2.getId().toString();
-            service.addMessage(u1.getId(), utilizatori, mesaj, LocalDateTime.now());
-            textFieldMessage.clear();
+            if(!mesaj.isEmpty()) {
+                service.addMessage(u1.getId(), utilizatori, mesaj, LocalDateTime.now());
+                textFieldMessage.clear();
+            }
+            else
+                MessageAlert.showMessage(null, "Nu a fost introdus un mesaj!");
+
         }
     }
 

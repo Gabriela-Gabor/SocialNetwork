@@ -57,8 +57,12 @@ public class MesajeController {
        Message m = mesajeTableView.getSelectionModel().getSelectedItem();
         if (m != null ) {
             String mesaj = textFieldMesaj.getText();
-            service.addReplyMessage(m.getId(), utilizator.getId(), mesaj,LocalDateTime.now());
-            textFieldMesaj.clear();
+            if (!mesaj.isEmpty()) {
+                service.addReplyMessage(m.getId(), utilizator.getId(), mesaj, LocalDateTime.now());
+                textFieldMesaj.clear();
+            } else {
+                MessageAlert.showMessage(null, "Nu a fost introdus un mesaj!");
+            }
         }
     }
 }
